@@ -1,0 +1,27 @@
+
+Interpolare proximală
+
+La functia de resize, cand am calculat factorii de scalare, am luat în considerare faptul că în Octave 
+indexarea incepe de la 1. Matricea de transformare este diagonală, valorile nenule fiind factorii de 
+scalare.Fiecarui pixel din imaginea finala i-am aplicat inversa matricei de transformare. Pentru 
+aflarea celui mai apropiat pixel am aplicat functia de rotunjire round. Pentru imaginile colorate
+am extras matricele specifice fiecarei culori, le-am aplicat functia prezentata mai sus si la final
+le-am concatenat pentru a obtine matricea finala. Am implementat si folosit functia proximal_coef.m
+pentru a calcula coeficientii.
+
+Pentru functia proximal_2x2 am considerat matricea finala ca fiind compusa din 4 parti diferite
+cu valorile functiei f. Valoarea pixelilor din imaginea finala depinde de situarea acestora
+intr-una dintre aceste parti.Pentru imaginile colorate am procedat la fel ca in cazul functiei resize.
+
+Interpolare bicubica
+
+Am calculat derivatele conform formulelor din cerinta si am tinut cont de faptul ca la marginile
+imaginii derivatele sunt 0, iar la calculul matricelor ce contin derivatele am plecat cu for-ul de la 2
+pentru a respecta conditia aferenta coordonatelor de la margine.
+
+Pentru calcularea coeficientilor , am calculat pe rand fiecare coloana a matricei A si am rezolvat 
+sistemul de ecuatii liniare folosind operatorul specific din Octave, "/", afland vectorul de coeficienti. 
+Pentru functia de resize, dupa calculul  coordonatelor (x_p, y_p), am aflat 
+coordonatele punctelor care le inconjoara. Pentru aproximarea in sus am folosit functia ceil, iar 
+pentru aproximare in jos, functia fix. Cu ajutorul coeficientilor am calculat valoarea pixelului
+din imaginea finala.
