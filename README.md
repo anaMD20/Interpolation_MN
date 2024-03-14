@@ -5,6 +5,7 @@ for which only part of the values ​​are known.
 Within the theme, we implemented two interpolation methods applied to images:
 
 • Proximal Interpolation;
+
 • Bicubic interpolation.
 
 Specifically, they will be used to resize and rotate images.
